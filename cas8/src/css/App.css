@@ -1,0 +1,14 @@
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-holder{
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.2 ease-in-out;
+}
+
+.image-holder:hover{
+    transform: scale(1.05);
+}
