@@ -8,6 +8,7 @@ export default function UsersContainer(){
     const dispatch = useDispatch();
     const users = useSelector(state=>state.usersReducer.users);
     const error = useSelector(state=>state.usersReducer.error)
+    const user = useSelector(state=>state.authReducer.user)
 
     useEffect(()=>{
         dispatch(fetchUsers())
@@ -20,6 +21,7 @@ export default function UsersContainer(){
 
     return(
         <div id="users-container">
+            <h2>Hello, {user}</h2>
             <UsersComponent listOfUsers={users} error={error} deleteUser={deleteUser}/>
         </div>
     )

@@ -12,3 +12,21 @@ export const LogInUser = (username, password) => {
     .then((json) => Promise.resolve(json))
     .catch((err) => Promise.reject(err));
 };
+
+
+export const registerUser = async (username,password) =>{
+    const header = {
+        "Content-Type":"application/json",
+        Accept:"application/json"
+    }
+    const data = {username:username,password:password}
+    try {
+        const json = await axios.post(`${api.localRoute}/register`, { headers: header, body: data });
+        console.log(json)
+        return await Promise.resolve(json);
+    } catch (err) {
+        console.log(err)
+        return Promise.reject(err.response.data.message);
+    }
+
+}

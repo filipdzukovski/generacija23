@@ -1,7 +1,23 @@
 import React,{useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {logIntoApp} from './duck/operations';
+import {useNavigate,Link} from 'react-router-dom';
 
 export const Login = () =>{
     const [loginData,setLoginData] = useState({username:"",password:""});
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    async function logIn(){
+        try{
+            await dispatch(logIntoApp(loginData.username,loginData.password));
+            navigate("/users")
+        }
+        catch(err){
+            alert(err)
+        }
+    }
+    
     return(
         <div id="login">
             <label>Username:</label>
@@ -22,7 +38,8 @@ export const Login = () =>{
             />
             <br/>
             <br/>
-            <button>Log In</button>
+            <p>Don't have an account? <Link to="/register">Register</Link></p>
+            <button onClick={logIn}>Log In</button>
         </div>
     )
 }

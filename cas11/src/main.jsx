@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store.jsx";
 import { Login } from "./components/auth/Login.jsx";
 import { PrivateRoute } from "./utils/PrivateRoute.jsx";
+import { Register } from "./components/auth/Register.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -15,6 +16,7 @@ root.render(
     <Router>
       <Routes>
         <Route path="/login" index element={<Login />} />
+        <Route path="/register" element={<Register/>}/>
         <Route
           path="/"
           element={
