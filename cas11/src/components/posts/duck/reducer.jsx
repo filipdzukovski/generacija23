@@ -36,7 +36,8 @@ export default function reducer(state = initialState, action) {
       console.log("ACTION PAYLOAD:",action.payload)
       return{
         ...state,
-        // posts:
+        posts:[...state.posts,action.payload.post],
+        error:undefined
       }
     case ADD_POST_FAIL:
       return{

@@ -9,7 +9,7 @@ import store from "./store.jsx";
 import { Login } from "./components/auth/Login.jsx";
 import { PrivateRoute } from "./utils/PrivateRoute.jsx";
 import { Register } from "./components/auth/Register.jsx";
-
+import { AlbumsWithHook } from "./components/AlbumsWithHook.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -28,6 +28,7 @@ root.render(
         >
           <Route path="/users" element={<Users />} />
           <Route path="/posts" element={<Posts/>}/>
+          <Route path="/albums" element={<AlbumsWithHook/>}/>
         </Route>
       </Routes>
     </Router>

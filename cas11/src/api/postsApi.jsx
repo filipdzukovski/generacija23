@@ -35,6 +35,9 @@ export const addPost = async (requestParams) => {
       body: JSON.stringify(requestParams.post),
     });
     const json = await result.json();
+    if(json.message === 'Author and post are required'){
+        throw new Error(json.message)
+    }
     return await Promise.resolve(json);
   } catch (error) {
     console.log(error);
