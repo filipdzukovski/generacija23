@@ -21,7 +21,7 @@ export default function UsersContainer(){
 
     return(
         <div id="users-container">
-            <h2>Hello, {user}</h2>
+            <h2>Hello, {user || localStorage.getItem("user")}</h2>
             <UsersComponent listOfUsers={users} error={error} deleteUser={deleteUser}/>
         </div>
     )

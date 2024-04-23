@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./components/App.jsx";
 import { Users } from "./components/users";
+import { Posts } from "./components/posts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store.jsx";
@@ -26,6 +27,7 @@ root.render(
           }
         >
           <Route path="/users" element={<Users />} />
+          <Route path="/posts" element={<Posts/>}/>
         </Route>
       </Routes>
     </Router>
